@@ -1,80 +1,97 @@
+<html>
+  <body>
+
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Add donor</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Donor</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="saveDonor.php" method="POST">
+
         <div class="modal-body">
-          <form>
-            <div class="form-group">
-              <label for="donor-name" class="col-form-label">Full Name:</label>
-              <input type="text" class="form-control" id="donor-name">
-            </div>
 
-            <!-- Gender -->
-            <div class="form-group container">
-              <label for="message-text" class="col-form-label mx-auto">Gender:</label>
-              <div class="row">
-                <label>Male:</label>
-                <div class="col-sm-3">
-                  <input type="radio" class="form-control " id="M" />
-                </div>
-                <label>Female:</label>
-                <div class="col-sm-3">
-                  <input type="radio" class="  form-control " id="F" />
-                </div>
+          <div class="form-group">
+            <label>First Name </label>
+            <input type="text" name="fname" id="fname"class="form-control" placeholder="Enter first name" required>
+          </div>  
+    <!-- Gender -->
+    <div class="form-group container">
+            <label for="message-text" class="col-form-label mx-auto">Gender:</label>
+            <div class="row">
+              <label>Male:</label>
+              <div class="col-sm-3">
+                <input type="radio" name="gender" class="form-control " id="M" checked required/>
+              </div>
+              <label>Female:</label>
+              <div class="col-sm-3">
+                <input type="radio" name="gender" class="form-control " id="F" required />
               </div>
             </div>
-            <!-- Gender end -->
-
-            <div class="form-group">
-              <label for="job" class="col-form-label">Job:</label>
-              <input type="text" class="form-control" id="job">
-            </div>
-
-            <div class="container">
-              <div class="row">
-                <label for="Married"> Married: </label>
-                <div class="col-sm-3">
-                  <input type="checkbox" class="form-control" id="Married">
-                </div>
-                <label for="Single"> Single: </label>
-                <div class="col-sm-3">
-                  <input type="checkbox" class="form-control" id="Single">
-                </div>
-              </div>
-            </div>
-            <div class="form-group col-md-4">
-              <label for="inputState">Blood type</label>
-              <select id="inputState" class="form-control">
-                <option selected>A+</option>
-                <option>A-</option>
-                <option>B+</option>
-                <option>B-</option>
-                <option>AB+</option>
-                <option>AB-</option>
-                <option>O+</option>
-                <option>O-</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="email" class="col-form-label">Email:</label>
-              <input type="Email" class="form-control" id="email">
-            </div>
-            <div class="form-group">
-              <label for="contact" class="col-form-label">Contact No:</label>
-              <input type="Number" class="form-control" id="contact">
-            </div>
-          </form>
+          </div>
+          <!-- Gender end --> 
+            
+          <div class="form-group">
+            <label>Job </label>  
+            <input type="text" name="job" id="username" class="form-control" placeholder="Enter job" required>
+          </div>
+          <div class="row">
+          <div class="form-group col-md-6">
+            <label for="inputState">Martial status</label>
+            <select id="inputState" name="Mstatus" class="form-control" required>
+              <option selected>Married</option>
+              <option>Single</option>
+            </select>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputState">Blood type</label>
+            <select id="inputState" name="blood_type" class="form-control" required>
+              <option selected>A+</option>
+              <option>A-</option>
+              <option>B+</option>
+              <option>B-</option>
+              <option>AB+</option>
+              <option>AB-</option>
+              <option>O+</option>
+              <option>O-</option>
+            </select>
+          </div>
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" name="email" id="email" class="form-control" placeholder="Enter Email" required>
+          </div>
+          <div class="form-group">
+            <label>Contact </label>
+            <input type="number" name="contact" id="contact" class="form-control" placeholder="Enter contact" required>
+          </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Register</button>
+          <button type="submit" name="Register" class="btn btn-primary">Save</button>
         </div>
-      </div>
+      </form>
+
+
+
+      
+
     </div>
   </div>
+</div>
+  </body>
+
+</html> 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

@@ -1,6 +1,7 @@
 <?php
 include('includes/header.php');
 include('includes/navbar.php');
+include('connection.php');
 ?>
 
 <div class="container-fluid">
@@ -10,9 +11,10 @@ include('includes/navbar.php');
         <div class="card-body">
 
             <div class="table-responsive">
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
+                            <th>ID</th>
                             <th>Name</th>
                             <th>Gender</th>
                             <th>Blood group</th>
@@ -20,42 +22,42 @@ include('includes/navbar.php');
                             <th>Phone</th>
                             <th>Email</th>
                             <th>Hospital</th>
-                            <th>Phone Number</th>
+                            <th>Unit</th>
                             <th> Action</th>
                             <th> Action</th>
                         </tr>
                     </thead>
                     <tbody>
 
-                        <!-- Where data comes or the table cells -->
-                        <tr>
-                            <td> 1 </td>
-                            <td>Jama yusuf</td>
-                            <td>M</td>
-                            <td>Single</td>
-                            <td>
-                                O+
-                            </td>
-                            <td>
-                                Horyaal
-                            </td>
-                            <td> Anemia</td>
-                            <td> Anemia</td>
-                            <td>
-                                <form action="" method="post">
-                                    <input type="hidden" name="edit_id" value="">
-                                    <button type="submit" name="edit_btn" class="btn btn-success"> EDIT</button>
-                                </form>
-                            </td>
 
-                            <td>
-                                <form action="" method="post">
-                                    <input type="hidden" name="delete_id" value="">
-                                    <button type="submit" name="delete_btn" class="btn btn-danger"> DELETE</button>
-                                </form>
-                            </td>
+                        <?php
+                        $res = mysqli_query($conn, "SELECT * FROM request");
+                        $date = date('Y/m/d H');
+                        $i = 1;
+                        while ($user = mysqli_fetch_array($res)) {
+                           
+                            echo "
 
-                        </tr>
+                            <tr>
+
+                            <td> {$user['request_id']}</td>
+                            <td> {$user['name']}</td>
+                            <td> {$user['gender']}</td>
+                            <td> {$user['blood_group']}</td>
+                            <td> $date</td>
+                            <td> {$user['phone']}</td>
+                            <td> {$user['email']}</td>
+                            <td> {$user['hospital']}</td>
+                            <td> {$user['unit']}</td>
+                            <td> <a href='updateForm.php?id={$user['request_id']}'  class=\"btn btn-success\">UPDATE</a></td>  
+                            <td> <a href='deleteForm.php?id={$user['request_id']}'  class=\"btn btn-danger\" onclick = 'return confirm(\"Are you You sure\")' >DELETE</a></td>
+                            
+                            </tr>
+
+                            ";
+                                                        $i++;
+                                                    }
+                                                    ?>
 
                     </tbody>
                 </table>

@@ -7,28 +7,28 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form action="code.php" method="POST">
+      <form action="saveReq.php" method="POST">
 
         <div class="modal-body">
 
           <div class="form-group">
             <label>Name </label>
-            <input type="text" name="name" class="form-control" placeholder="Enter first name">
+            <input type="text" name="name" id="name" class="form-control" placeholder="Enter first name">
           </div>         
          
           <div class="form-group container">
             <label>Gender:</label> <br/>
             <label class="radio-inline">
-              <input type="radio" name="optradio" checked> Male
+              <input type="radio" name="gender" id="gender" checked> Male
             </label>
             <label class="radio-inline" px-md-5>
-              <input type="radio" name="optradio">Female
+              <input type="radio" id="gender" name="gender">Female
             </label>
           </div>
 
           <div class="form-group col-md-4">
-              <label for="inputState">Blood type</label>
-              <select id="inputState" class="form-control">
+              <label for="blood_type">Blood type</label>
+              <select id="blood_type" name="blood_type" class="form-control">
                 <option selected>A+</option>
                 <option>A-</option>
                 <option>B+</option>
@@ -39,26 +39,29 @@
                 <option>O-</option>
               </select>
             </div>
-
+          <div class="form-group">
+            <label>Contact </label>
+            <input type="number" id="contact" name="contact" class="form-control" placeholder="Enter contact">
+          </div> 
             <div class="form-group">
             <label>Email</label>
-            <input type="email" name="email" class="form-control" placeholder="Enter Email">
+            <input type="email" id="email" name="email" class="form-control" placeholder="Enter Email">
           </div>
 
           <div class="form-group">
             <label>Hospital </label>
-            <input type="text" name="hospital" class="form-control" placeholder="Enter hospital">
+            <input type="text" id="hospital" name="hospital" class="form-control" placeholder="Enter hospital">
           </div>  
 
-            <div class="form-group">
-            <label>Contact </label>
-            <input type="number" name="contact" class="form-control" placeholder="Enter contact">
+               
+          <div class="form-group">
+            <label>Unit </label>
+            <input type="number" id="unit" name="unit" class="form-control" placeholder="Enter unit">
           </div>    
-
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="submit" name="registerbtn" class="btn btn-primary">Save</button>
+          <button type="submit" name="Register" class="btn btn-primary">Save</button>
         </div>
       </form>
 

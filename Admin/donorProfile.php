@@ -2,21 +2,23 @@
 include('includes/header.php');
 include('includes/navbar.php');
 ?>
+
+
 <div class="container">
     <div class="card text-center " style="width: 60rem; height:40rem;">
-        <img class="card-img-top rounded" style="width: 12rem;" src="img/pro.gif " alt="donor profile">
+        <img class="card-img-top rounded" style="width: 10rem;" src="img/pro1.png " alt="donor profile">
         <div class="card-body">
-            <h5 class="card-title">Alex mariano</h5>
-            <p class="card-text">Welcome to profile of < Alex Mariano>
+            <h5 class="card-title">Hassan Jama</h5>
+            <p class="card-text">Welcome to profile of < Hassan Jama >
             </p>
         </div>
         <ul class="list-group list-group-flush">
             <li class="list-group-item">M</li>
             <li class="list-group-item">Student</li>
             <li class="list-group-item">Single</li>
-            <li class="list-group-item">A+</li>
-            <li class="list-group-item">Alex@mariano.com</li>
-            <li class="list-group-item">+172897438674</li>
+            <li class="list-group-item">O+</li>
+            <li class="list-group-item">jama@gmail.com</li>
+            <li class="list-group-item">+987976878</li>
         </ul>
         <div class="card-body">
            

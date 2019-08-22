@@ -1,6 +1,7 @@
 <?php
 include('includes/header.php');
 include('includes/navbar.php');
+include('connection.php');
 ?>
 
 <?php
@@ -40,35 +41,40 @@ include('adduser.php')
                     <tbody>
 
                         <!-- Where data comes or the table cells -->
-                        <tr>
-                            <td> 1 </td>
-                            <td>Jama yusuf</td>
-                            <td>M</td>
-                            <td>Single</td>
-                            <td>
-                                O+
-                            </td>
-                            <td>
-                                Horyaal
-                            </td>
-                            <td> Anemia</td>
-
-                            <td>
-                                <form action="" method="post">
-                                    <input type="hidden" name="edit_id" value="">
-                                    <button type="submit" name="edit_btn" class="btn btn-success"> EDIT</button>
-                                </form>
-                            </td>
-                            <td>
-                                <form action="" method="post">
-                                    <input type="hidden" name="delete_id" value="">
-                                    <button type="submit" name="delete_btn" class="btn btn-danger"> DELETE</button>
-                                </form>
-                            </td>
-
-                        </tr>
+                  
 
                     </tbody>
+                    <?php 
+$res=mysqli_query($conn,"SELECT * FROM users ");
+$i=1;
+while ( $user=mysqli_fetch_array($res)) {
+echo "
+
+<tr>
+
+<td> {$user['user_id']}</td>
+<td> {$user['name']}</td>
+<td> {$user['username']}</td>
+<td> {$user['email']}</td>
+<td> {$user['password']}</td>
+<td> {$user['contact']}</td>
+<td> {$user['type_of_user']}</td>
+<td> <a href='updateForm.php?id={$user['user_id']}'  class=\"btn btn-success\">UPDATE</a></td>  
+<td> <a href='deleteForm.php?id={$user['user_id']}' class=\"btn btn-danger\" onclick = 'return confirm(\"Are you You sure\")' >DELETE</a></td>
+
+
+
+</tr>
+
+";
+$i++;
+}
+ ?>
+
+
+
+
+
                 </table>
 
             </div>
