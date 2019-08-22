@@ -1,6 +1,15 @@
 <?php
 include('includes/header.php');
 include('includes/navbar.php');
+include('connection.php');
+
+?>
+
+<?php
+       $row= mysql_query("SELECT * FROM `donor` WHERE donor_id =". $_GET['donor_id']);
+       $user=mysql_fetch_array($row);
+       //print_r($user); 
+       $sps=explode(',', $user['FavSports']);      
 ?>
 
 

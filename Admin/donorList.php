@@ -8,7 +8,7 @@ $donor = mysqli_query($conn, "SELECT * FROM donor")
 <div class="row  mb-2 mr-5 ml-5 mt-2">
     <div class="col-12">
         <div class="list-group" id="list-tab" role="tablist">
-            <a href="donorProfile.php">
+            <a href="donorProfile.php? donor_id={$row['donor_id']}">
                 <li class=" bg-success list-group-item list-group-item-action active text-center " href="" role="tab" aria-controls="Name"><?php echo $row['full_name'] ?></li>
             </a>
         </div>
