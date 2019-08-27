@@ -59,8 +59,8 @@ echo "
 <td> {$user['password']}</td>
 <td> {$user['contact']}</td>
 <td> {$user['type_of_user']}</td>
-<td> <a href='updateForm.php?id={$user['user_id']}'  class=\"btn btn-success\">UPDATE</a></td>  
-<td> <a href='deleteForm.php?id={$user['user_id']}' class=\"btn btn-danger\" onclick = 'return confirm(\"Are you You sure\")' >DELETE</a></td>
+<td> <a class=\"btn btn-success\" name=\"send\"  href='updateUser.php?id={$user['user_id']}'  data-toggle=\"modal\" data-target=\"#UpdateUser\" name=\"update\"><i class=\"fa fa-user-edit\"></a></td>  
+<td> <a href='deleteUser.php?id={$user['user_id']}' class=\"btn btn-danger\" onclick = 'return confirm(\"Are you You sure\")' ><i class=\"fa fa-trash-alt\"></a></td>
 
 
 
