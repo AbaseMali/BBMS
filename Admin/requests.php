@@ -49,8 +49,8 @@ include('connection.php');
                             <td> {$user['email']}</td>
                             <td> {$user['hospital']}</td>
                             <td> {$user['unit']}</td>
-                            <td> <a href='updateForm.php?id={$user['request_id']}'  class=\"btn btn-success\">UPDATE</a></td>  
-                            <td> <a href='deleteForm.php?id={$user['request_id']}'  class=\"btn btn-danger\" onclick = 'return confirm(\"Are you You sure\")' >DELETE</a></td>
+                            <td> <a href='requests.php?id={$user['request_id']}'  class=\"btn btn-success\">Confirm</a></td>  
+                            <td> <a href='requests.php?id={$user['request_id']}'  class=\"btn btn-danger\" onclick = 'return confirm(\"Are you You sure\")' >Reject</a></td>
                             
                             </tr>
 
@@ -61,6 +61,11 @@ include('connection.php');
 
                     </tbody>
                 </table>
+                <?php 
+
+
+
+                 ?>
             </div>
         </div>
     </div>

@@ -1,6 +1,9 @@
+<?php  ?>
 <?php
 include('lab_header.php'); 
 include('lab_navbar.php'); 
+include('../Admin/connection.php');
+
 ?>
 
 
@@ -24,8 +27,13 @@ include('lab_navbar.php');
             <div class="col mr-2">
               <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Donors</div>
               <div class="h5 mb-0 font-weight-bold text-gray-800">
+              <?php 
+                    $query = "SELECT donor_id FROM `donor` ORDER BY donor_id ";
+                    $query_run = mysqli_query($conn, $query);
 
-               <h4>Total Donors: 22</h4>
+                    $row = mysqli_num_rows($query_run);
+                ?>
+               <h4><?php  echo '<h1>' .$row. '</h1>'; ?></h4>
 
               </div>
             </div>
@@ -40,15 +48,25 @@ include('lab_navbar.php');
 
     <!-- Pending Requests Card Example -->
     <div class="col-6 mb-4">
-      <div class="card border-left-warning shadow h-100 py-2">
+      <div class="card border-left-primary shadow h-100 py-2">
         <div class="card-body">
           <div class="row no-gutters align-items-center">
             <div class="col mr-2">
-              <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Admin Users</div>
-              <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+              <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Lab Requests</div>
+              <div class="h5 mb-0 font-weight-bold text-gray-800">
+
+              <?php 
+                    $query = "SELECT labid FROM `lab` ORDER BY labid ";
+                    $query_run = mysqli_query($conn, $query);
+
+                    $row = mysqli_num_rows($query_run);
+                ?>
+                 <h4><?php  echo '<h1>' .$row. '</h1>'; ?></h4>
+
+              </div>
             </div>
             <div class="col-auto">
-              <i class="fas fa-comments fa-2x text-gray-300"></i>
+              <i class="fas fa-diagnoses fa-2x text-gray-300"></i> 
             </div>
           </div>
         </div>

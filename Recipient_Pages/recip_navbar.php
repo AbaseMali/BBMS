@@ -38,6 +38,12 @@
       <span>Request Blood</span></a>
   </li>
 
+  <li class="nav-item">
+    <a class="nav-link" href="logout.php">
+      <i class="fas fa-fw fa-chart-area"></i>
+      <span>Logout</span></a>
+  </li>
+
 
 
 

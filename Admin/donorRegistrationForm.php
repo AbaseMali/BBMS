@@ -16,21 +16,15 @@
 
           <div class="form-group">
             <label>First Name </label>
-            <input type="text" name="fname" id="fname"class="form-control" placeholder="Enter first name" required>
+            <input type="text" name="fname" id="fname" class="form-control" placeholder="Enter first name" required>
           </div>  
     <!-- Gender -->
     <div class="form-group container">
-            <label for="message-text" class="col-form-label mx-auto">Gender:</label>
-            <div class="row">
-              <label>Male:</label>
-              <div class="col-sm-3">
-                <input type="radio" name="gender" class="form-control " id="M" checked required/>
-              </div>
-              <label>Female:</label>
-              <div class="col-sm-3">
-                <input type="radio" name="gender" class="form-control " id="F" required />
-              </div>
-            </div>
+            <label>Gender</label>
+            <select class="form-control" name="gender">
+              <option value="M">Male</option>
+              <option class="F">Female</option>
+            </select>
           </div>
           <!-- Gender end --> 
             
@@ -42,8 +36,8 @@
           <div class="form-group col-md-6">
             <label for="inputState">Martial status</label>
             <select id="inputState" name="Mstatus" class="form-control" required>
-              <option selected>Married</option>
-              <option>Single</option>
+              <option value="Married">Married</option>
+              <option value="Single">Single</option>
             </select>
           </div>
           <div class="form-group col-md-6">
@@ -68,6 +62,12 @@
             <label>Contact </label>
             <input type="number" name="contact" id="contact" class="form-control" placeholder="Enter contact" required>
           </div>
+
+          <div class="form-group">
+            <label>Unit</label>
+            <input type="text" name="unit" id="unit" class="form-control" placeholder="Enter Unit" required>
+          </div>
+
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

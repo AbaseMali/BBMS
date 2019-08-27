@@ -4,6 +4,16 @@ include('connection.php');
 
 session_start();
 
+                $uname = $_SESSION['username'];
+
+                $sql = mysqli_query($con,"SELECT * FROM `users` WHERE username='$uname'");
+
+                while ($row1 = mysqli_fetch_assoc($sql)) {
+
+
+                    $un = $row1['username'];
+                    }
+
 if (isset($_POST['Register'])) {
 
     $name = $_POST['name'];
@@ -16,9 +26,9 @@ if (isset($_POST['Register'])) {
     
    
 
-    $q = "INSERT INTO `request`(`name`, `gender`, `blood_group`,  `phone`, `email`, `hospital`, `unit`)
+    $q = "INSERT INTO `request`(`name`, `gender`, `blood_group`,  `phone`, `email`, `hospital`, `unit`,`status`,`username`)
      VALUES
-    ('$name','$gender','$blood_type','$contact','$email','$hospital','$unit')";
+    ('$name','$gender','$blood_type','$contact','$email','$hospital','$unit','Request','$un')";
 
 
     if (!mysqli_query($conn, $q)) {

@@ -3,34 +3,38 @@ include('includes/header.php');
 include('includes/navbar.php');
 include('connection.php');
 
+
 ?>
 
 <?php
-       $row= mysql_query("SELECT * FROM `donor` WHERE donor_id =". $_GET['donor_id']);
-       $user=mysql_fetch_array($row);
-       //print_r($user); 
-       $sps=explode(',', $user['FavSports']);      
-?>
+        if(isset($_GET['donor_id'])){
+
+        $donor_id = $_GET['donor_id'];
+           
+       $row= mysqli_query($conn,"SELECT * FROM `donor` WHERE donor_id ='$donor_id'");
+       while ( $user=mysqli_fetch_array($row)){ ?>
+
 
 
 <div class="container">
     <div class="card text-center " style="width: 60rem; height:40rem;">
         <img class="card-img-top rounded" style="width: 10rem;" src="img/pro1.png " alt="donor profile">
         <div class="card-body">
-            <h5 class="card-title">Hassan Jama</h5>
-            <p class="card-text">Welcome to profile of < Hassan Jama >
+            <h5 class="card-title"><?php echo $user['full_name']?></h5>
+            <p class="card-text">Welcome to profile of < <?php echo $user['full_name']?> >
             </p>
         </div>
         <ul class="list-group list-group-flush">
-            <li class="list-group-item">M</li>
-            <li class="list-group-item">Student</li>
-            <li class="list-group-item">Single</li>
-            <li class="list-group-item">O+</li>
-            <li class="list-group-item">jama@gmail.com</li>
-            <li class="list-group-item">+987976878</li>
+            <li class="list-group-item"><?php echo $user['gender'] ?></li>
+            <li class="list-group-item"><?php echo $user['job'] ?></li>
+            <li class="list-group-item"><?php echo $user['martial_status'] ?></li>
+            <li class="list-group-item"><?php echo $user['blood_type'] ?></li>
+            <li class="list-group-item"><?php echo $user['email'] ?></li>
+            <li class="list-group-item"><?php echo $user['contact_no'] ?></li>
         </ul>
         <div class="card-body">
-           
+           <?php } }?>
+
 
                 <button type="button" class="btn btn-primary float-left" data-toggle="modal" data-target=".bd-example-modal-lg">Update</button>
                 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -41,7 +45,7 @@ include('connection.php');
                     </div>
                 </div>
 
-                <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#sendToLab">
+                <button type="button"  class="btn btn-primary float-right" data-toggle="modal" data-target="#sendToLab" >
                     Send to lab
                 </button>
                 <?php

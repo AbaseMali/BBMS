@@ -4,6 +4,13 @@ include('includes/navbar.php');
 include('connection.php');
 ?>
 
+<?php
+
+include('../Admin/connection.php');
+
+
+$donor = mysqli_query($conn, "SELECT * FROM lab where status='Negative' or status='Positive'");
+?>
 
 <div class="container-fluid">
     <h2>Lab Result</h2>
@@ -18,19 +25,21 @@ include('connection.php');
     <tr>
       <th scope="col">ID</th>
       <th scope="col">Name</th>
-      <th scope="col">Status</th>
+      <th scope="col">Result</th>
       
     </tr>
   </thead>
+  <?php while ($row = mysqli_fetch_array($donor)) {  ?>
   <tbody>
     <tr>
-      <th scope="row">1</th>
-      <td>Abase</td>
-      <td>Negative</td>
+      <th scope="row"><?php echo $row['labid']; ?></th>
+      <td><?php echo $row['fullname']; ?></td>
+      <td><?php echo $row['status']; ?></td>
      
     </tr>
    
   </tbody>
+  <?php } ?>
 </table>
 
 

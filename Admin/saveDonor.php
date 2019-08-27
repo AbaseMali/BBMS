@@ -13,10 +13,11 @@ if (isset($_POST['Register'])) {
     $blood_type = $_POST['blood_type'];
     $email = $_POST['email'];
     $contact =  $_POST['contact'];
+    $unit = $_POST['unit'];
 
-    $q = "INSERT INTO `donor`(`full_name`, `gender`, `job`, `martial_status`, `blood_type`, `email`, `contact_no`) 
+    $q = "INSERT INTO `donor`(`full_name`, `gender`, `job`, `martial_status`, `blood_type`, `email`, `contact_no`,`unit`) 
     VALUES 
-    ('$fname','$gender','$job','$s','$blood_type','$email','$contact')";
+    ('$fname','$gender','$job','$Mstatus','$blood_type','$email','$contact','$unit')";
 
 
     if (!mysqli_query($conn, $q)) {

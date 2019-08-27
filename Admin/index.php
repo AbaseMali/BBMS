@@ -1,6 +1,7 @@
 <?php
 include('includes/header.php'); 
 include('includes/navbar.php'); 
+include('connection.php');
 ?>
 
 
@@ -16,7 +17,7 @@ include('includes/navbar.php');
   <!-- Content Row -->
   <div class="row">
 
-    <!-- Earnings (Monthly) Card Example -->
+    
     <div class="col-xl-3 col-md-6 mb-4">
       <div class="card border-left-primary shadow h-100 py-2">
         <div class="card-body">
@@ -24,8 +25,13 @@ include('includes/navbar.php');
             <div class="col mr-2">
               <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Donors</div>
               <div class="h5 mb-0 font-weight-bold text-gray-800">
+                <?php 
+                    $query = "SELECT donor_id FROM `donor` ORDER BY donor_id ";
+                    $query_run = mysqli_query($conn, $query);
 
-               <h4>Total Donors: 22</h4>
+                    $row = mysqli_num_rows($query_run);
+                ?>
+               <h4><?php  echo '<h1>' .$row. '</h1>'; ?></h4>
 
               </div>
             </div>
@@ -44,7 +50,15 @@ include('includes/navbar.php');
           <div class="row no-gutters align-items-center">
             <div class="col mr-2">
               <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Blood Requests</div>
-              <div class="h5 mb-0 font-weight-bold text-gray-800">215</div>
+
+              <?php 
+                    $query = "SELECT request_id FROM `request` ORDER BY request_id ";
+                    $query_run = mysqli_query($conn, $query);
+
+                    $row = mysqli_num_rows($query_run);
+                ?>
+
+                <h4><?php  echo '<h1>' .$row. '</h1>'; ?></h4>
             </div>
             <div class="col-auto">
             <!-- The icon is gonna be here -->
@@ -54,22 +68,24 @@ include('includes/navbar.php');
       </div>
     </div>
 
-    <!-- Earnings (Monthly) Card Example -->
     <div class="col-xl-3 col-md-6 mb-4">
       <div class="card border-left-info shadow h-100 py-2">
         <div class="card-body">
           <div class="row no-gutters align-items-center">
             <div class="col mr-2">
-              <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Recipient Users</div>
+              <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Lab Results</div>
               <div class="row no-gutters align-items-center">
                 <div class="col-auto">
-                  <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
+                <?php 
+                    $query = "SELECT * FROM `lab` WHERE status = 'positive' or status = 'negative'";
+                    $query_run = mysqli_query($conn, $query);
+
+                    $row = mysqli_num_rows($query_run);
+                ?>
+                 <h4><?php  echo '<h1>' .$row. '</h1>'; ?></h4>
                 </div>
                 <div class="col">
-                  <div class="progress progress-sm mr-2">
-                    <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50"
-                      aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
+             
                 </div>
               </div>
             </div>
@@ -88,7 +104,15 @@ include('includes/navbar.php');
           <div class="row no-gutters align-items-center">
             <div class="col mr-2">
               <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Admin Users</div>
-              <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+
+              
+              <?php 
+                    $query = "SELECT * FROM `users` WHERE type_of_user = 'Admin' ORDER BY user_id ";
+                    $query_run = mysqli_query($conn, $query);
+
+                    $row = mysqli_num_rows($query_run);
+                ?>
+                <h4><?php  echo '<h1>' .$row. '</h1>'; ?></h4>
             </div>
             <div class="col-auto">
               <i class="fas fa-comments fa-2x text-gray-300"></i>
@@ -98,6 +122,33 @@ include('includes/navbar.php');
       </div>
     </div>
   </div>
+        <div class="row">
+       
+    <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card border-left-warning shadow h-100 py-2">
+        <div class="card-body">
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+              <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Recipient Users</div>
+
+              
+              <?php 
+                    $query = "SELECT * FROM `users` WHERE type_of_user = 'Recipient' ORDER BY user_id ";
+                    $query_run = mysqli_query($conn, $query);
+
+                    $row = mysqli_num_rows($query_run);
+                ?>
+                <h4><?php  echo '<h1>' .$row. '</h1>'; ?></h4>
+            </div>
+            <div class="col-auto">
+              <i class="fas fa-comments fa-2x text-gray-300"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+        </div>
 
   <!-- Content Row -->
 
