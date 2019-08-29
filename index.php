@@ -78,7 +78,7 @@ include 'config.php';
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Online Beauty Salon Management System</title>
+	<title>Blood Bank Management System</title>
 	<link rel="stylesheet" href="styles/bootstrap/metro-theme.css">
     <link rel="stylesheet" href="styles/font-awesome/css/font-awesome.min.css">
     <script src="js/jquery-2.1.4.min.js"></script>
@@ -93,9 +93,11 @@ include 'config.php';
                 <div class="row">
                     <div class="col-md-7 col-md-offset-3" style="border: 2px solid #2780e3;">
                         <div class="panel">
+                                
                             <div class="text-center text-primary panel-heading">
-                                <h1><i class="fa fa-apple"></i> Login&nbsp;</h1>
+                                <h1><img src="Admin\img\hash.png" width="120rm" height="120rm" alt=""></h1>
                             </div>
+
                             <div class="panel-body">
                               
                                 <form method="post" action="" class="form-horizontal">

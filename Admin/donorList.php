@@ -35,9 +35,17 @@ $donor = mysqli_query($conn, "SELECT * FROM donor")
 				<td><?php echo $row['email']; ?></td>
 				<td><?php echo $row['contact_no']; ?></td>
 				<td><?php echo $row['unit']; ?></td>
-				<td><a class="btn btn-success" name="send" href="donor.php?did=<?php echo $row['donor_id']; ?>" onclick='return confirm("Are you You sure to send a lab")'><i class="fa fa-edit"></i></a></td>
-				<td><a class="btn btn-danger" name="delete" href="donordelete.php?did=<?php echo $row['donor_id']; ?>" onclick='return confirm("Are you You sure to delete")'><i class="fa fa-trash-alt"></i></a></td>
-				<td> <a class="btn btn-warning " data-toggle="modal" data-target="#donorUpdate" name="update" href="donorUpdate.php?did=<?php echo $row['donor_id']; ?>"
+				<!-- send to lab -->
+				<td><a class="btn btn-success" name="send" href="donor.php?did=<?php echo $row['donor_id']; ?>" 
+				onclick='return confirm("Are you You sure to send a lab")'><i class="fa fa-edit"></i></a></td>
+				
+				<!-- delete -->
+				<td><a class="btn btn-danger" name="delete" href="donordelete.php?did=<?php echo $row['donor_id']; ?>"
+				 onclick='return confirm("Are you You sure to delete")'><i class="fa fa-trash-alt"></i></a></td>
+
+				 <!-- update -->
+				<td> <a class="btn btn-warning " data-toggle="modal" data-target="#donorUpdate" name="update" 
+				href="donorUpdate.php?did=<?php echo $row['donor_id']; ?>"
 								><i class="fa fa-user-edit"></i></a>
 					  </td>
 			</tr>

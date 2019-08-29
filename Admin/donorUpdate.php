@@ -4,8 +4,9 @@
   ?>
   <?php
            $q= "SELECT * FROM `donor` WHERE donor_id =".$_GET['did'];
-           mysqli_query($conn,$q);
-           $user = mysqli_fetch_array($q);
+            echo "$q"
+          //  mysqli_query($conn,$q);
+          //  $user = mysqli_fetch_array($q);
            
   ?>
 
